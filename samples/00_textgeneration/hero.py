@@ -1,5 +1,5 @@
-from extremerpglib.grammar import SimpleGrammar
-from extremerpglib.utils.printme import printme
+from txtgamelib.grammar import SimpleGrammar
+from txtgamelib.utils.printme import printme
 
 
 main_story_structure = {

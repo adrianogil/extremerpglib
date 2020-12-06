@@ -1,0 +1,48 @@
+{
+    "game_template": "branch_based_interactive_fiction",
+    "__init__": {
+      "text0": ["In a very distant reign, a wizard and a dragon are arguing and on verge to battle."],
+      "text0": ["A wizard is really close to the dragon."],
+      "text2": ["They are negotiating."],
+      "text3": ["..."],
+      "text4": ["So are you either "],
+      "options": [
+        {
+            "key": "1",
+            "text": " a dragon?",
+            "next_chunk": "dragon_negotiating"
+        },
+        {
+            "key": "2",
+            "text": " a wizard?",
+            "next_chunk": "wizard_negotiating"
+        }
+      ]
+    },
+    "wizard_negotiating": {
+        "text0": ["The dragon should let humans mine in his mountain."],
+        "text1": ["The wizard is trying to wisely pick his next words."],
+        "options": [
+        {
+            "key": "1",
+            "text": " - We think this business would be really profitable for your kind!",
+            "next_chunk": "dragon_negotiating"
+        },
+        {
+            "key": "2",
+            "text": " - These are difficulty times for your species. Maybe you should not make it more difficulty",
+            "next_chunk": "wizard_is_eaten"
+        }
+      ]
+    },
+    "dragon_negotiating": {
+        "text0": ["The dragon is pretending to be convinced by the poor human."],
+        "text1": ["He is really eager to feed into human flesh."],
+        "text2": ["How dare a human to propose such things to him, a demi-god?."],
+        "text2": ["The wizard is trying to wisely pick his next words."],
+    },
+    "wizard_is_eaten": {
+        "text0": ["The wizard is prompty eaten by the dragon."],
+        "text1": ["Maybe his kind will learn a lesson from now onwards."]
+    }
+}

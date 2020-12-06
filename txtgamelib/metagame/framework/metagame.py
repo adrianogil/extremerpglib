@@ -1,8 +1,9 @@
 """
 """
-from extremerpglib.textgeneration import TextGenerationTemplate
+from txtgamelib.textgeneration import TextGenerationTemplate
+from txtgamelib.ifgame.branchbasedtemplate import BranchBasedTextGenerationTemplate
 
-from extremerpglib.utils.printme import printme
+from txtgamelib.utils.printme import printme
 
 import json
 import os
@@ -11,7 +12,8 @@ import os
 class MetaGame:
     def __init__(self):
         self.game_templates = [
-            TextGenerationTemplate
+            TextGenerationTemplate,
+            BranchBasedTextGenerationTemplate
         ]
         self.current_game = None
 

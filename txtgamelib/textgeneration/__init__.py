@@ -1,6 +1,6 @@
-from extremerpglib.metagame.framework.gametemplate import GameTemplate
-from extremerpglib.grammar import SimpleGrammar
-from extremerpglib.utils.printme import printme
+from txtgamelib.metagame.framework.gametemplate import GameTemplate
+from txtgamelib.grammar import SimpleGrammar
+from txtgamelib.utils.printme import printme
 
 
 class TextGenerationTemplate(GameTemplate):

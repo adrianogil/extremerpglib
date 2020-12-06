@@ -1,6 +1,7 @@
 
 
 class GameTemplate:
+
     def __init__(self):
         pass
 
