@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='ExtremeRPGLib',
+    name='txtgamelib',
     version='0.1dev',
     packages=['extremerpglib'],
     license='MIT license',
