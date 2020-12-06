@@ -5,4 +5,4 @@ if __name__ == "__main__":
     # print("Running game: %s" % (sys.argv[1:]))
     game = MetaGame()
     game.load_game(sys.argv[1:])
-    # game.play()
+    game.play()

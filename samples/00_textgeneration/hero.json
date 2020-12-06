@@ -1,0 +1,6 @@
+{
+    "game_template": "text_generation",
+    "text": ["Once upon a time, #brief_hero_description# #hero_action# a dragon"],
+    "brief_hero_description": ["a powerful knight", "a misterious wizard", "a good and generous paladin"],
+    "hero_action": ["was fighting throught the night with", "was dancing throught the night with"]
+}
