@@ -1,33 +1,13 @@
 """ Main class for text generation """
 from extremerpglib.utils.printme import printme
 from extremerpglib.utils.listutils import get_random_element
-
-
-def opposite_direction(d):
-    if d == 'north':
-        return 'south'
-    elif d == 'south':
-        return 'north'
-    elif d == 'west':
-        return 'east'
-    return 'west'
-
-
-def capitalize(s):
-    return s[0].upper() + s[1:]
-
-
-def is_int(s):
-    try:
-        int(s)
-        return True
-    except ValueError:
-        pass
-
-    return False
+from extremerpglib.utils.datautils import capitalize, is_integer
 
 
 class SimpleGrammar:
+    """
+        Class for handling text generation
+    """
     def __init__(self):
         self.reset_tags()
 
@@ -50,12 +30,6 @@ class SimpleGrammar:
         self.static_tags = {}
         self.text_functions = {}
 
-        def capitalize(text):
-            # print("debug: Trying to capitalize - " + str(text))
-            new_text = text[0].upper() + text[1:]
-
-            return new_text
-
         self.text_functions['capitalize'] = capitalize
 
     def add_tag(self, tag, expression):
@@ -71,13 +45,20 @@ class SimpleGrammar:
 
         return text_evaluated
 
-    def parse(self, data):
+    def parse(self, data=None):
+        if data is None:
+            # Method is used staticcaly
+            data = self
+            grammar = SimpleGrammar()
+            return grammar.parse(data)
+
         printme("[Debug] SimpleGrammar.parse - parsing grammar: %s" % (data,), debug=True)
 
         if data.__class__ == dict:
             return self.parse_dict(data)
 
     def parse_dict(self, dict_data):
+
         printme("[Debug] SimpleGrammar.parse_dict - parsing grammar: %s" % (dict_data,), debug=True)
         for key in dict_data:
             self.add_tag(key, dict_data[key])
@@ -97,8 +78,8 @@ class SimpleGrammar:
                         # print("debug: real_tag: " + real_tag)
                         # print("debug: prefix_tag: " + prefix_tag)
                         break
-                if is_int(prefix_tag):
-                    if not t in self.static_tags:
+                if is_integer(prefix_tag):
+                    if t not in self.static_tags:
                         if real_tag in self.tags:
                             self.static_tags[t] = self.evaluate(get_random_element(self.tags[real_tag]))
                     if t in self.static_tags:
