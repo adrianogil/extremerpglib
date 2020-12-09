@@ -39,7 +39,19 @@
         "text0": ["The dragon is pretending to be convinced by the poor human."],
         "text1": ["He is really eager to feed into human flesh."],
         "text2": ["How dare a human to propose such things to him, a demi-god?."],
-        "text2": ["The wizard is trying to wisely pick his next words."],
+        "text3": ["Thus the dragon decides to test this audacious human."],
+        "options": [
+            {
+                "key": "1",
+                "text": " - We think this business would be really profitable for your kind!",
+                "next_chunk": "dragon_negotiating"
+            },
+            {
+                "key": "2",
+                "text": " - ",
+                "next_chunk": "wizard_is_eaten"
+            }
+        ]
     },
     "wizard_is_eaten": {
         "text0": ["The wizard is prompty eaten by the dragon."],
